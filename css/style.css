@@ -1,0 +1,23 @@
+/* Contact Page Styles */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center; /* Center the content */
+}
+
+.container img {
+    border-radius: 50%; /* Make image circular */
+    margin-bottom: 20px;
+}
+
+.container p {
+    margin-bottom: 10px;
+}
+
+.container a {
+    color: #007bff;
+    text-decoration: none;
+}
