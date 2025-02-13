@@ -1,171 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Title</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/styles.css">  </head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WamalwaAbiud - Home</title>
+  <!--icon -->
+  <link rel="icon" href="img/abiud.jpeg" type="image/jpeg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
 <body>
-    <section class=" top-txt ">
-        <div class="head container ">
-            <div class="head-txt ">
-                <p>Free shipping, 30-day return or refund guarantee.</p>
-            </div>
-            <div class="sing_in_up ">
-                <a href="#">SIGN IN</a>
-                <a href="#">SIGN UP</a>
-            </div>
+  <header>
+    <div class="container">
+      <h1>
+        <img src="img/abiud.jpeg" alt="Wamalwa Icon" style="height:40px; vertical-align:middle;" />
+        Wamalwa
+      </h1>
+      <nav>
+        <ul id="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="#">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <div class="container">
+      <section class="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+          <!-- Smartphone -->
+          <div class="product-card">
+            <img src="img/smartphone.jpeg" alt="Smartphone X">
+            <h3> Iphone X plus</h3>
+            <p>Latest smartphone with high-end specs.</p>
+            <p class="price">ksh 69900</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!-- Laptop Pro -->
+          <div class="product-card">
+            <img src="img/laptop.jpeg" alt="Laptop Pro">
+            <h3>Macbook pro 2019</h3>
+            <p>Powerful laptop for professionals,Data scientists,gaming,data analysis and programming.</p>
+            <p class="price">ksh 158000</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!-- Headphones -->
+          <div class="product-card">
+            <img src="img/headphone.jpeg" alt="Wireless Headphones">
+            <h3>Wireless Headphones</h3>
+            <p>Experience true wireless freedom.</p>
+            <p class="price">ksh 1990</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!--T-Shirt -->
+          <div class="product-card">
+            <img src="img/tshirt.jpeg" alt="Casual T-Shirt">
+            <h3>Casual T-Shirt</h3>
+            <p>Comfortable and stylish.</p>
+            <p class="price">ksh 1200</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!--Jacket -->
+          <div class="product-card">
+            <img src="img/jacket.jpeg" alt="Leather Jacket">
+            <h3>Leather Jacket</h3>
+            <p>Trendy leather jacket for a cool look.</p>
+            <p class="price">ksh 3000</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!--Jeans -->
+          <div class="product-card">
+            <img src="img/jeans.jpeg" alt="Denim Jeans">
+            <h3>Denim Jeans</h3>
+            <p>Perfect fit for everyday wear.</p>
+            <p class="price">ksh 1500</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!--Smartwatch S -->
+          <div class="product-card">
+            <img src="img/smartwatch.jpeg" alt="Smartwatch S">
+            <h3>Smartwatch S</h3>
+            <p>Keep track of your health and notifications.</p>
+            <p class="price">ksh 2000</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!-- Tablet Plus -->
+          <div class="product-card">
+            <img src="img/tablet.jpeg" alt="Tablet Plus">
+            <h3>Tablet Plus</h3>
+            <p>Portable and powerful tablet for work and play.</p>
+            <p class="price">ksh 12000</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!--Gaming Console -->
+          <div class="product-card">
+            <img src="img/gaming.jpeg" alt="Gaming Console Z">
+            <h3>Gaming Console Z</h3>
+            <p>Next-gen console for immersive gaming.</p>
+            <p class="price">ksh 25000</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!--Bluetooth Speaker -->
+          <div class="product-card">
+            <img src="img/speaker.jpeg" alt="Bluetooth Speaker">
+            <h3>Bluetooth Speaker</h3>
+            <p>Crystal clear sound in a portable design.</p>
+            <p class="price">ksh 5000</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!--Digital Camera -->
+          <div class="product-card">
+            <img src="img/nikon.jpeg" alt="Digital Camera">
+            <h3>Digital Camera</h3>
+            <p>Capture life's moments in high definition.</p>
+            <p class="price">ksh 50000</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!--Summer Dress -->
+          <div class="product-card">
+            <img src="img/dress.jpeg" alt="Summer Dress">
+            <h3>Summer Dress</h3>
+            <p>Light and breezy, perfect for sunny days.</p>
+            <p class="price">ksh 5000</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!-- Sneakers -->
+          <div class="product-card">
+            <img src="img/sneakers.jpeg" alt="Sneakers">
+            <h3>Airforce</h3>
+            <p>Comfortable and trendy for everyday use.</p>
+            <p class="price">ksh 2500</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!-- Hoodie -->
+          <div class="product-card">
+            <img src="img/hoodie.jpeg" alt="Hoodie">
+            <h3>Hoodie</h3>
+            <p>Cozy hoodie for casual wear.</p>
+            <p class="price">ksh 2000</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <!--Shirt -->
+          <div class="product-card">
+            <img src="img/shirt.jpeg" alt="Formal Shirt">
+            <h3>official Shirt</h3>
+            <p>Elegant shirt for special occasions.</p>
+            <p class="price">ksh 750</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
         </div>
-    </section>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <input type="checkbox" name="" id="checkbox">
-            <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-            <ul class="menu-items">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sellers">Shop</a></li>
-                <li><a href="#news">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="logo">
-                <img src="https://i.postimg.cc/TP6JjSTt/logo.webp" alt="">
-            </div>
-        </div>
-    </nav>
-    <section id="home">
-        <div class="home_page ">
-            <div class="home_img ">
-                <img src="https://i.postimg.cc/t403yfn9/home2.jpg" alt="img ">
-            </div>
-            <div class="home_txt ">
-                <p class="collectio ">SUMMER COLLECTION</p>
-                <h2>FALL - WINTER<br>Collection 2025</h2>
-                <div class="home_label ">
-                    <p>A specialist label creating luxury essentials. Ethically crafted<br>with an unwavering commitment to exceptional quality.</p>
-                </div>
-                <button><a href="#sellers">SHOP NOW</a><i class='bx bx-right-arrow-alt'></i></button>
-                <div class="home_social_icons">
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                    <a href="#"><i class='bx bxl-pinterest'></i></a>
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="collection">
-        <div class="collections container">
-            <div class="content">
-                <img src="https://i.postimg.cc/Xqmwr12c/clothing.webp" alt="img" />
-                <div class="img-content">
-                    <p>Clothing Collections</p>
-                    <button><a href="#sellers">SHOP NOW</a></button>
-                </div>
-            </div>
-            <div class="content2">
-                <img src="https://i.postimg.cc/8CmBZH5N/shoes.webp" alt="img" />
-                <div class="img-content2">
-                    <p>Shoes Spring</p>
-                    <button><a href="#sellers">SHOP NOW</a></button>
-                </div>
-            </div>
-            <div class="content3">
-                <img src="https://i.postimg.cc/MHv7KJYp/access.webp" alt="img" />
-                <div class="img-content3">
-                    <p>Accessories</p>
-                    <button><a href="#sellers">SHOP NOW</a></button>
-                </div>
-            </div>
-        </div>
-    </section>
-        <section id="sellers">
-            <div class="seller container">
-                <h2>Top Sales</h2>
-                <div class="best-seller">
-                    <div class="best-p1">
-                        <img src="https://i.postimg.cc/8CmBZH5N/shoes.webp" alt="img">
-                        <div class="best-p1-txt">
-                            <div class="name-of-p">
-                                <p>PS England Shoes</p>
-                            </div>
-                            <div class="rating">
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bx-star'></i>
-                                <i class='bx bx-star'></i>
-                            </div>
-                            <div class="price">
-                                &dollar;37.24
-                                <div class="colors">
-                                    <i class='bx bxs-circle red'></i>
-                                    <i class='bx bxs-circle blue'></i>
-                                    <i class='bx bxs-circle white'></i>
-                                </div>
-                            </div>
-                            <div class="buy-now">
-                                <button><a href="https://codepen.io/sanketbodke/full/mdprZOq">Buy  Now</a></button>
-                            </div>
-                            </div>
-                    </div>
-                    <div class="best-p1">
-                        <img src="https://i.postimg.cc/76X9ZV8m/Screenshot_from_2022-06-03_18-45-12.png" alt="img">
-                        <div class="best-p1-txt">
-                            <div class="name-of-p">
-                                <p>PS England Jacket</p>
-                            </div>
-                            <div class="rating">
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bx-star'></i>
-                                <i class='bx bx-star'></i>
-                                <i class='bx bx-star'></i>
-                            </div>
-                            <div class="price">
-                                &dollar;17.24
-                                <div class="colors">
-                                    <i class='bx bxs-circle green'></i>
-                                    <i class='bx bxs-circle grey'></i>
-                                    <i class='bx bxs-circle brown'></i>
-                                </div>
-                            </div>
-                            <div class="buy-now">
-                                <button><a href="https://codepen.io/sanketbodke/full/mdprZOq">Buy  Now</a></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="best-p1">
-                        <img src="https://i.postimg.cc/j2FhzSjf/bs2.png" alt="img">
-                        <div class="best-p1-txt">
-                            <div class="name-of-p">
-                                <p>PS England Shirt</p>
-                            </div>
-                            <div class="rating">
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bxs-star'></i>
-                                <i class='bx bx-star'></i>
-                            </div>
-                            <div class="price">
-                                &dollar;27.24
-                                <div class="colors">
-                                    <i class='bx bxs-circle brown'></i>
-                                    <i class='bx bxs-circle green'></i>
-                                    <i class='bx bxs-circle blue'></i>
-                                </div>
-                            </div>
-                            <div class="buy-now">
-                                <button><a href="https://codepen.io/sanketbodke/full/mdprZOq">Buy  Now</a></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="best-p1">
-                        <img src="https://i.postimg.cc/QtjSDzPF/bs3.png" alt="img">
-                        <div class="best-p1-txt">
+      </section>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Wamalwa Abiud. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script src="js/script.js"></script>
+</body>
+</html>
