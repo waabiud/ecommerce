@@ -1,95 +1,480 @@
-/* styles.css */
-.products {
-  margin-top: 20px;
-}
+/* Alibaba-style components */
 
-.product-grid {
+.product-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+}
+
+.product-list > * {
+  margin: 10px;
 }
 
 .product-card {
   background-color: #fff;
+  padding: 20px;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  width: calc(33.333% - 20px);
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px);
 }
 
 .product-card img {
-  max-width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
-.product-card h3 {
-  color: #0277bd;
+.product-card h2 {
+  margin-top: 0;
 }
 
 .product-card p {
-  margin: 10px 0;
+  margin-bottom: 1em;
 }
 
-.product-card .price {
-  font-weight: bold;
-  color: #01579b;
+.register-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.product-card button {
-  background-color: #0277bd;
+.login-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-history {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.order-history li {
+  margin-bottom: 10px;
+}
+
+.order-history li p {
+  margin-bottom: 0.5em;
+}
+
+/* Responsive design */
+
+@media only screen and (max-width: 768px) {
+.layout {
+    flex-direction: column;
+  }
+.card {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+.layout {
+    flex-direction: column;
+  }
+.card {
+    width: 100%;
+  }
+}
+
+/* Buttons */
+
+.button {
+  background-color: #ff9900;
   color: #fff;
   border: none;
-  padding: 10px 15px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
-  border-radius: 4px;
 }
 
-.product-card button:hover {
-  background-color: #01579b;
+.button:hover {
+  background-color: #ffcc00;
 }
 
-/* Contact form styling */
-form {
-  max-width: 600px;
-  margin: 20px auto;
-  background: #fff;
+/* Forms */
+
+.form {
+  max-width: 500px;
+  margin: 0 auto;
   padding: 20px;
+  background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-control {
-  margin-bottom: 15px;
-}
-
-.form-control label {
+.form label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #0277bd;
+  margin-bottom: 10px;
 }
 
-.form-control input,
-.form-control textarea {
+.form input[type="text"],.form input[type="email"],.form input[type="password"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
 }
 
-form button {
-  background-color: #0277bd;
+.form button[type="submit"] {
+  background-color: #ff9900;
   color: #fff;
   border: none;
-  padding: 10px 15px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
-  border-radius: 4px;
 }
 
-form button:hover {
-  background-color: #01579b;
+.form button[type="submit"]:hover {
+  background-color: #ffcc00;
+}
+
+/* Footer */
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  clear: both;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+/* Navigation */
+
+.nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav li {
+  margin-right: 20px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #ccc;
+}
+
+/* Header */
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.header h1 { 
+  margin-top: 0;
+}
+
+/* Main content */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.main h2 {
+  margin-top: 0;
+}
+
+.main p {
+  margin-bottom: 10px;
+}
+
+/** 
+ * Product Grid
+ */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.product-grid.card {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-grid.card img {
+    width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.product-grid.card h2 {
+  margin-top: 0;
+}
+
+.product-grid.card p {
+  margin-bottom: 1em;
+}
+
+/** 
+ * Product Details
+ */
+.product-details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-details img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.product-details h2 {
+  margin-top: 0;
+}
+
+.product-details p {
+  margin-bottom: 1em;
+}
+
+/** 
+ * Register Form
+ */
+.register-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.register-form input[type="text"],.register-form input[type="email"],.register-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.register-form button[type="submit"] {
+  background-color: #ff9900;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.register-form button[type="submit"]:hover {
+  background-color: #ffcc00;
+}
+
+/** 
+ * Login Form
+ */
+.login-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.login-form input[type="text"],.login-form input[type="email"],.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.login-form button[type="submit"] {
+  background-color: #ff9900;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-form button[type="submit"]:hover {
+  background-color: #ffcc00;
+}
+
+/** 
+ * Profile
+ */
+.profile {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.profile h2 {
+  margin-top: 0;
+}
+
+.profile p {
+  margin-bottom: 1em;
+}
+
+/** 
+ * Order History
+ */
+.order-history {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.order-history li {
+  margin-bottom: 10px;
+}
+
+.order-history li p {
+  margin-bottom: 0.5em;
+}
+
+/** 
+ * Payment
+ */
+.payment {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.payment input[type="text"],.payment input[type="email"],.payment input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+
+.payment button[type="submit"] {
+  background-color: #ff9900;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+payment button[type="submit"]:hover {
+  background-color: #ffcc00;
+}
+
+/** 
+ * Responsive Design
+ */
+@media only screen and (max-width: 768px) {
+ .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+ .product-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/** 
+ * Footer
+ */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  clear: both;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+/* Final CSS Rule */
+body {
+  margin: 0;
+  padding: 0;
 }
