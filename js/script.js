@@ -1,137 +1,148 @@
-/* script.js */
-document.addEventListener("DOMContentLoaded", function() {
-  // Update cart count on page load
-  updateCartCount();
-  // Update nav links based on login status
-  updateAuthLinks();
+// Get the add to cart buttons
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
 
-  // Contact form submission handling
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for your message! We will get back to you soon.');
-      contactForm.reset();
-    });
-  }
-  
-  // Add to Cart functionality
-  const addToCartButtons = document.querySelectorAll('.add-to-cart');
-  addToCartButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const productCard = button.closest('.product-card');
-      const name = productCard.querySelector('h3').textContent;
-      const priceText = productCard.querySelector('.price').textContent;
-      const price = parseFloat(priceText.replace('$', ''));
-      const img = productCard.querySelector('img').src;
-      
-      const product = { name, price, img, quantity: 1 };
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const existingProductIndex = cart.findIndex(item => item.name === product.name);
-      if (existingProductIndex !== -1) {
-        cart[existingProductIndex].quantity += 1;
-      } else {
-        cart.push(product);
-      }
-      localStorage.setItem('cart', JSON.stringify(cart));
-      updateCartCount();
-      alert(`${product.name} added to cart!`);
-    });
+// Add event listener for add to cart button click
+addToCartButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    // Get the product ID and name
+    const productId = button.dataset.productId;
+    const productName = button.dataset.productName;
+
+    // Add the product to the cart
+    // Your cart logic here
+    console.log(`Added ${productName} to cart`);
   });
-
-  // Login form submission handling
-  const loginForm = document.getElementById('loginForm');
-  if (loginForm) {
-    loginForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = document.getElementById('loginEmail').value;
-      localStorage.setItem("loggedInUser", JSON.stringify({ email: email }));
-      alert(`Logged in as ${email}`);
-      window.location.href = "profile.html";
-    });
-  }
-
-  // Register form submission handling
-  const registerForm = document.getElementById('registerForm');
-  if (registerForm) {
-    registerForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = document.getElementById('registerEmail').value;
-      const password = document.getElementById('registerPassword').value;
-      const confirmPassword = document.getElementById('confirmPassword').value;
-      if (password !== confirmPassword) {
-        alert('Passwords do not match!');
-      } else {
-        // In a real app, register the user on the server.
-        localStorage.setItem("loggedInUser", JSON.stringify({ email: email }));
-        alert(`Registered with ${email}`);
-        window.location.href = "profile.html";
-      }
-    });
-  }
-
-  // Logout button handling
-  const logoutBtn = document.getElementById('logout');
-  if (logoutBtn) {
-    logoutBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      localStorage.removeItem("loggedInUser");
-      alert("You have been logged out.");
-      window.location.href = "index.html";
-    });
-  }
-
-  // Profile page: display user info
-  const profileInfo = document.getElementById('profile-info');
-  if (profileInfo) {
-    const user = JSON.parse(localStorage.getItem("loggedInUser"));
-    if (!user) {
-      window.location.href = "login.html";
-    } else {
-      profileInfo.innerHTML = `<p>You are logged in as <strong>${user.email}</strong>.</p>`;
-    }
-  }
 });
 
-// Function to update the cart count displayed in the navbar
-function updateCartCount() {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  let count = cart.reduce((total, item) => total + item.quantity, 0);
-  const cartCountElement = document.getElementById('cart-count');
-  if (cartCountElement) {
-    cartCountElement.textContent = count;
-  }
-}
+// Get the register form element
+const registerForm = document.getElementById('registerForm');
 
-// Function to update authentication links in the navbar
-function updateAuthLinks() {
-  const navLinks = document.getElementById('nav-links');
-  const user = JSON.parse(localStorage.getItem("loggedInUser"));
-  if (navLinks) {
-    // If the user is logged in, replace Login and Register with Profile and Logout
-    if (user) {
-      navLinks.innerHTML = `
-        <li><a href="index.html">Home</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="#" id="logout">Logout</a></li>
-        <li><a href="#">Cart (<span id="cart-count">${getCartCount()}</span>)</a></li>
-      `;
-      // Reattach logout event listener
-      const logoutBtn = document.getElementById('logout');
-      if (logoutBtn) {
-        logoutBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          localStorage.removeItem("loggedInUser");
-          alert("You have been logged out.");
-          window.location.href = "index.html";
-        });
-      }
+// Add event listener for form submission
+registerForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  // Get the form data
+  const email = document.getElementById('registerEmail').value;
+  const password = document.getElementById('registerPassword').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+  const name = document.getElementById('registerName').value;
+  const phone = document.getElementById('registerPhone').value;
+  
+  // Validate the form data
+  if (password!== confirmPassword) {
+    document.getElementById('registerError').innerHTML = 'Passwords do not match';
+    return;
+  }
+  
+  // Register the user
+  fetch('/api/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email,
+      password,
+      name,
+      phone
+    })
+  })
+.then((response) => response.json())
+.then((data) => {
+    if (data.success) {
+      window.location.href = 'login.html';
+    } else {
+      document.getElementById('registerError').innerHTML = data.message;
     }
-  }
-}
+  })
+.catch((error) => {
+    console.error(error);
+  });
+});
 
-function getCartCount() {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  return cart.reduce((total, item) => total + item.quantity, 0);
-}
+// Get the login form element
+const loginForm = document.getElementById('loginForm');
+
+// Add event listener for form submission
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  // Get the form data
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+  
+  // Login the user
+  fetch('/api/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email,
+      password
+    })
+  })
+.then((response) => response.json())
+.then((data) => {
+    if (data.success) {
+      window.location.href = 'profile.html';
+    } else {
+      document.getElementById('loginError').innerHTML = data.message;
+    }
+  })
+.catch((error) => {
+    console.error(error);
+  });
+});
+
+// Get the profile info element
+const profileInfo = document.getElementById('profile-info');
+
+// Get the profile details
+fetch('/api/profile')
+.then((response) => response.json())
+.then((data) => {
+  profileInfo.innerHTML = `
+    <h3>Personal Details</h3>
+    <p><strong>Name:</strong> ${data.name}</p>
+    <p><strong>Email:</strong> ${data.email}</p>
+    <p><strong>Phone:</strong> ${data.phone}</p>
+    <p><strong>Address:</strong> ${data.address}</p>
+    
+    <h3>Order History</h3>
+    <ul id="order-history">
+      ${data.orderHistory.map(order => `
+        <li>
+          <p><strong>Order ID:</strong> ${order.orderId}</p>
+          <p><strong>Order Date:</strong> ${order.orderDate}</p>
+          <p><strong>Order Total:</strong> ${order.orderTotal}</p>
+        </li>
+      `).join('')}
+    </ul>
+    
+    <h3>Account Settings</h3>
+    <button id="edit-profile">Edit Profile</button>
+    <button id="change-password">Change Password</button>
+  `;
+})
+.catch((error) => {
+  console.error(error);
+});
+
+// Get the edit profile button
+const editProfileButton = document.getElementById('edit-profile');
+
+// Add event listener for edit profile button click
+editProfileButton.addEventListener('click', () => {
+  // Edit profile logic here
+  console.log('Edit profile button clicked');
+});
+
+// Get the change password button
+const changePasswordButton = document.getElementById('change-password');
+
+// Add event listener for change password button click
+changePasswordButton.addEventListener('click', () => {
+  // Change password logic here
+  console.log('Change password button clicked');
+});
